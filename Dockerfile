@@ -1,5 +1,4 @@
-FROM debian:latest AS build
-RUN apt-get update && apt-get install -y openjdk-17-jdk
+FROM eclipse-temurin:17-jdk-jammy AS build
 COPY . .
 RUN ./gradlew build -x test
 
